@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    {% include 'dashboard/partials/left_sidebar.html' %}
+
+    <div class="page-container">
+
+        {% include 'dashboard/partials/top_bar.html' %}
+
+        {% block page %}{% endblock %}
+
+        {% include 'dashboard/partials/footer.html' %}
+
+    </div>
+
+{% endblock %}
