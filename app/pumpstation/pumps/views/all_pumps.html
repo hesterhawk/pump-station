@@ -1,0 +1,100 @@
+{% extends "dashboard/index.html" %}
+
+{% block page %}
+
+    <main class='main-content bgc-grey-100'>
+        <div id='mainContent'>            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="bgc-white bd bdrs-3 p-20 mB-20">
+
+                        <div class="row">
+                          <div class="col-md-12">
+                              <h4 class="c-grey-900 mT-10 mB-30 pull-left">Water Pumps</h4>
+                              <a href="#" class="btn btn-primary pull-right">Add new pump</a>
+                          </div>
+                        </div>
+
+                        <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Options</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="peers fxw-nw@lg+ jc-sb ta-c gap-10">
+                                            <div class="peer">
+                                                <div class="easy-pie-chart" data-size='80' data-percent="75" data-bar-color='#f44336'>
+                                                <span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>461</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="peers fxw-nw@lg+ jc-sb ta-c gap-10">
+                                            <div class="peer">
+                                                <div class="easy-pie-chart" data-size='80' data-percent="75" data-bar-color='#f44336'>
+                                                <span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>461</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="peers fxw-nw@lg+ jc-sb ta-c gap-10">
+                                            <div class="peer">
+                                                <div class="easy-pie-chart" data-size='80' data-percent="75" data-bar-color='#f44336'>
+                                                <span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>461</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="peers fxw-nw@lg+ jc-sb ta-c gap-10">
+                                            <div class="peer">
+                                                <div class="easy-pie-chart" data-size='80' data-percent="75" data-bar-color='#f44336'>
+                                                <span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>461</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

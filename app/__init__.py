@@ -12,8 +12,16 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 
+from .pumpstation.pumps.controllers import pumps
 from .pumpstation.main.controllers import main
 from .pumpstation.auth.controllers import auth
 
+"""
+    [BUG] blueprint template_folder: https://stackoverflow.com/questions/7974771/flask-blueprint-template-folder
+"""
+
+app.register_blueprint(pumps)
 app.register_blueprint(main)
 app.register_blueprint(auth)
+
+# app.url_map

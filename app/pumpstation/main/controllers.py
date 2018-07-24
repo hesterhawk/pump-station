@@ -5,7 +5,7 @@ main = Blueprint('main', __name__, template_folder="views")
 
 @main.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('main.html')
     
 @main.route('/dashboard', methods=['GET'])
 def dashboard():
