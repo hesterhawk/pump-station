@@ -1,0 +1,24 @@
+
+Migrations
+
+1. Flask
+
+flask db init
+
+2. Config - migrations/env.py
+
+change line `target_metadata`
+
+target_metadata = current_app.extensions['migrate'].db.metadata
+
+to this one:
+
+from app.models.user import User
+from app.models.pump import Pump
+from app.models.test import Test
+target_metadata = Test.metadata
+
+3. Flask
+
+flask db migrate -m "migrations"
+flask db upgrade

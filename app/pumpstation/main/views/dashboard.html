@@ -1,46 +1,85 @@
 {% extends "dashboard/index.html" %}
 
-{% block page %}
+{% block content %}
 
-    <main class='main-content bgc-grey-100'>
-      <div id='mainContent'>
-        <div class="row gap-20 masonry pos-r">
-          <div class="masonry-sizer col-md-6 pos-a"></div>
-          <div class="masonry-item col-md-6">
-            <div class="bgc-white p-20 bd">
-              <h6 class="c-grey-900">Easy Pie Charts</h6>
-              <div class="mT-30">
-                <div class="peers mT-20 fxw-nw@lg+ jc-sb ta-c gap-10">
-                  <div class="peer">
-                    <div class="easy-pie-chart" data-size='80' data-percent="75" data-bar-color='#f44336'>
-                      <span></span>
-                    </div>
-                    <h6 class="fsz-sm">New Users</h6>
-                  </div>
-                  <div class="peer">
-                    <div class="easy-pie-chart" data-size='80' data-percent="50" data-bar-color='#2196f3'>
-                      <span></span>
-                    </div>
-                    <h6 class="fsz-sm">New Purchases</h6>
-                  </div>
-                  <div class="peer">
-                    <div class="easy-pie-chart" data-size='80' data-percent="65" data-bar-color='#f44336'>
-                      <span></span>
-                    </div>
-                    <h6 class="fsz-sm">New Customers</h6>
-                  </div>
-                  <div class="peer">
-                    <div class="easy-pie-chart" data-size='80' data-percent="90" data-bar-color='#ff9800'>
-                      <span></span>
-                    </div>
-                    <h6 class="fsz-sm">Bounce Rate</h6>
-                  </div>
-                </div>
-              </div>
+    <div class="page-header">
+        <h1 class="page-title">
+          Dashboard
+        </h1>
+      </div>
+      <div class="row row-cards row-deck">
+        <div class="col-12">
+          <div class="card">
+            <div class="table-responsive">
+              <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                <thead>
+                  <tr>
+                    <th class="text-center w-1"><i class="icon-people"></i></th>
+                    <th>User</th>
+                    <th>Usage</th>
+                    <th class="text-center">Payment</th>
+                    <th>Activity</th>
+                    <th class="text-center">Satisfaction</th>
+                    <th class="text-center"><i class="icon-settings"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">
+                      <div class="avatar d-block" style="background-image: url(demo/faces/male/20.jpg)">
+                        <span class="avatar-status bg-green"></span>
+                      </div>
+                    </td>
+                    <td>
+                      <div>Christopher Harvey</div>
+                      <div class="small text-muted">
+                        Registered: Jan 22, 2018
+                      </div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>83%</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                        </div>
+                      </div>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-green" role="progressbar" style="width: 83%"
+                       aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <i class="payment payment-googlewallet"></i>
+                    </td>
+                    <td>
+                      <div class="small text-muted">Last login</div>
+                      <div>8 minutes ago</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="mx-auto chart-circle chart-circle-xs" data-value="0.83" data-thickness="3" data-color="blue">
+                        <div class="chart-circle-value">83%</div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
+        </div>            
       </div>
-    </main>
 
 {% endblock %}

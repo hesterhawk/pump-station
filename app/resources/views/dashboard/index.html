@@ -2,16 +2,26 @@
 
 {% block body %}
 
-    {% include 'dashboard/partials/left_sidebar.html' %}
+<div class="page">
+    <div class="page-main">
 
-    <div class="page-container">
+    {% include 'dashboard/partials/header.html' %}
 
-        {% include 'dashboard/partials/top_bar.html' %}
+    {% include 'dashboard/partials/header_menu.html' %}
 
-        {% block page %}{% endblock %}
+      <div class="my-3 my-md-5">
+        <div class="container">
 
-        {% include 'dashboard/partials/footer.html' %}
+            {% block content %}{% endblock %}
 
+        </div>
+      </div>
     </div>
+
+    {% include 'dashboard/partials/footer_menu.html' %}
+
+    {% include 'dashboard/partials/footer.html' %}
+
+  </div>
 
 {% endblock %}
