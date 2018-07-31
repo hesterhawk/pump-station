@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
 from flask_login import LoginManager
@@ -12,6 +12,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 
+if True != Config.DEBUG_APP:
+    from app import errors
+    
 from .pumpstation.pumps.controllers import pumps
 from .pumpstation.main.controllers import main
 from .pumpstation.auth.controllers import auth

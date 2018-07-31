@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col col-login mx-auto">
                 <div class="text-center mb-6">
-                  <img src="{{ url_for('static', filename='img/logo.png') }}" class="h-6" alt="">
+                  <img src="{{ url_for('static', filename='img/logo.png') }}" class="h-6" alt="">&nbsp;&nbsp;&nbsp; Pump Station
                 </div>
                 <form class="card" action="{{ url_for('auth.login') }}" method="post">
                   {{ form.hidden_tag() }}

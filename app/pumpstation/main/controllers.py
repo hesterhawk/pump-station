@@ -12,10 +12,28 @@ def dashboard():
     if not current_user.is_authenticated:
         return redirect(url_for('auth.login'))
 
-    return render_template('dashboard.html')
+    """
+        TODO
+        
+        Calculate percentage of all water pumps
+    """
+    percent = 89
 
+    return render_template('dashboard.html', percent=90, donut=_chartDonut(percent))
 
-# template debug only
-@main.route('/_debug', methods=['GET'])
-def debug():
-    return render_template('_dashboard.html')
+### private
+
+def _chartDonut(percent):
+
+    data = {
+        39: "#b10c0c",  # red
+        69: "#e2c912",  # yellow
+        100: "#0cb120"  # green
+    }
+
+    color = list(filter(lambda x: percent < x, data))[-1]
+
+    colors = "{'data1': '" + str(data[color]) + "','data2': '#dcdcdc'};"
+    columns = "[['data1', {}],['data2', {}]];".format(percent, 100 - percent)
+
+    return { "colors": colors, "columns": columns }
