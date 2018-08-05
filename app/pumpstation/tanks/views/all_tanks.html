@@ -16,7 +16,7 @@
           {% endwith %}
 
           <h1 class="page-title pull-left">Dashboard</h1>
-          <a href="{{ url_for('pumps.create') }}" class="btn btn-primary btn-sm pull-right">create water pump</a>
+          <a href="{{ url_for('tanks.create') }}" class="btn btn-primary btn-sm pull-right">create water pump</a>
         </div>
       </div>
       <div class="row row-cards row-deck">
@@ -27,7 +27,7 @@
                 <thead>
                   <tr>
                     <th class="text-center w-1"><i class="icon-people"></i></th>
-                    <th>Pump</th>
+                    <th>Tank</th>
                     <th>Last action</th>                    
                     <th>Status</th>
                     <th class="text-center">Water</th>
@@ -35,15 +35,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for pump in pumps %}
+                  {% for tank in tanks %}
                       <tr>
                         <td class="text-center">
-                          #{{ pump.id }}
+                          #{{ tank.id }}
                         </td>
                         <td>
-                          <div>{{ pump.fullname }}</div>
+                          <div>{{ tank.fullname }}</div>
                           <div class="small text-muted">
-                            Created: {{ pump.created_date }}
+                            Created: {{ tank.created_date }}
                           </div>
                         </td>
                         <td>
@@ -62,8 +62,8 @@
                           <div class="item-action dropdown">
                             <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
                             <div class="dropdown-menu dropdown-menu-right">
-                              <a href="#" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Edit </a>
-                              <a href="#" class="dropdown-item"><i class="dropdown-icon fe fe-trash-2"></i> Destroy </a>
+                              <a href="{{ url_for('tanks.update', id=tank.id) }}" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Edit </a>
+                              <a href="{{ url_for('tanks.destroy', id=tank.id) }}" class="dropdown-item"><i class="dropdown-icon fe fe-trash-2"></i> Destroy </a>
                             </div>
                           </div>
                         </td>

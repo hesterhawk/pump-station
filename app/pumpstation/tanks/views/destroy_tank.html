@@ -1,0 +1,42 @@
+{% extends "dashboard/index.html" %}
+{% block content %}
+
+    <div class="page-header">
+      <div class="col-12">          
+        <a href="{{ url_for('tanks.all') }}" 
+        class="btn btn-secondary btn-sm pull-left" 
+        style="margin: 7px 10px 0px 0px;"
+        title="&larr; go to the water pumps list"
+        >&larr;</a>
+        <h1 class="page-title pull-left">Destroy Water Tank</h1>
+      </div>
+    </div>
+    <div class="row row-cards">        
+      <div class="col-8">
+        <div class="card">
+          <div class="card-body">
+
+              <form action="{{ url_for('tanks.destroy', id=tank.id) }}" method="post">
+
+                  <p>Are You sure to delete <b>{{ tank.fullname }}</b> permanently? Be careful, this action cannot be undone!</p>
+
+                  <br><br>
+
+                  <div class="form-group">
+                      <a href="{{ url_for('tanks.all') }}" 
+                      class="btn btn-secondary pull-left" 
+                      style="margin: 7px 10px 0px 0px;"
+                      title="&larr; go to the water pumps list"
+                      >&larr; back</a>
+                      <button type="submit" class="btn btn-danger pull-right">Destroy water tank</button>
+                  </div>
+
+              </form>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+      </div>
+    </div>
+{% endblock %}

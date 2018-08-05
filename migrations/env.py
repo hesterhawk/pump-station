@@ -23,8 +23,8 @@ config.set_main_option('sqlalchemy.url',
 # target_metadata = current_app.extensions['migrate'].db.metadata
 
 from app.models.user import User
-from app.models.pump import Pump
-target_metadata = Pump.metadata
+from app.models.tank import Tank
+target_metadata = Tank.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

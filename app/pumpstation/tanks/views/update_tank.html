@@ -1,24 +1,13 @@
 {% extends "dashboard/index.html" %}
 {% block content %}
-
-    <script>    
-      require(['c3', 'jquery'], function(c3, $) {
-        $(document).ready(function(){        
-          // TODO - generate sample token
-
-
-        });
-      });
-    </script>
-
     <div class="page-header">
       <div class="col-12">          
-        <a href="{{ url_for('pumps.all') }}" 
+        <a href="{{ url_for('tanks.all') }}" 
         class="btn btn-secondary btn-sm pull-left" 
         style="margin: 7px 10px 0px 0px;"
         title="&larr; go to the water pumps list"
         >&larr;</a>
-        <h1 class="page-title pull-left">Create Water Pump</h1>
+        <h1 class="page-title pull-left">Update Water Tank</h1>
       </div>
     </div>
     <div class="row row-cards">        
@@ -26,17 +15,17 @@
         <div class="card">
           <div class="card-body">
 
-              <form action="{{ url_for('pumps.create') }}" method="post">
+              <form action="{{ url_for('tanks.update', id=tank.id) }}" method="post">
                   {{ form.hidden_tag() }}
                   <div class="form-group">
                       <label class="form-label">*Fullname</label>
-                      {{ form.fullname(size=32, class='form-control is-invalid' if form.fullname.errors else 'form-control', placeholder='fullname..') }}
+                      {{ form.fullname(size=32, value=form.fullname.data if form.fullname.data else tank.fullname, class='form-control is-invalid' if form.fullname.errors else 'form-control', placeholder='fullname..') }}
                       {% for error in form.fullname.errors %}<div class="invalid-feedback">{{ error }}</div> {% endfor %}                      
                   </div>
 
                   <div class="form-group">
                       <label class="form-label">*Location</label>
-                      {{ form.location(size=32, class='form-control is-invalid' if form.location.errors else 'form-control', placeholder='location..') }}
+                      {{ form.location(size=32, value=form.location.data if form.location.data else tank.location, class='form-control is-invalid' if form.location.errors else 'form-control', placeholder='location..') }}
                       {% for error in form.location.errors %}<div class="invalid-feedback">{{ error }}</div> {% endfor %}                      
                   </div>
 
@@ -44,7 +33,7 @@
                       <label class="form-label">*Token</label>
                       <div class="row">
                           <div class="col-6">
-                              {{ form.token(size=32, class='form-control is-invalid' if form.token.errors else 'form-control', placeholder='fullname..') }}
+                              {{ form.token(size=32, value=form.token.data if form.token.data else tank.token, class='form-control is-invalid' if form.token.errors else 'form-control', placeholder='fullname..') }}
                               {% for error in form.token.errors %}<div class="invalid-feedback">{{ error }}</div> {% endfor %}
                           </div>
                       </div>
@@ -53,12 +42,12 @@
                   <br><br>
 
                   <div class="form-group">
-                      <a href="{{ url_for('pumps.all') }}" 
+                      <a href="{{ url_for('tanks.all') }}" 
                       class="btn btn-secondary pull-left" 
                       style="margin: 7px 10px 0px 0px;"
                       title="&larr; go to the water pumps list"
-                      >&larr; go back</a>
-                      <button type="submit" class="btn btn-primary pull-right">Create water pump</button>
+                      >&larr; back</a>
+                      <button type="submit" class="btn btn-primary pull-right">Update water tank</button>
                   </div>
 
               </form>
@@ -73,13 +62,13 @@
               <h2 class="mt-0 mb-4">Manual</h2>
               <p>Let me explain these <strong>Water Pump</strong> fields:</p>
               <p>
-                <span class="tag">*Fullname</span> - this field displays on the water pumps list
+                <span class="tag">*Fullname</span> - this field displays on the water tanks list
               </p>
               <p>
                 <span class="tag">*Location</span> - whatever You want: e.g. "fourth corner of my garden"
               </p>
               <p>
-                <span class="tag">*Token</span> - unique token for each Water Pump. This field is reserved for API
+                <span class="tag">*Token</span> - unique token for each Water Tank. This field is reserved for API
               </p>
               <hr>
               * - required fields

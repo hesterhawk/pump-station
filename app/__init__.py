@@ -15,7 +15,7 @@ login = LoginManager(app)
 if True != Config.DEBUG_APP:
     from app import errors
     
-from .pumpstation.pumps.controllers import pumps
+from .pumpstation.tanks.controllers import tanks
 from .pumpstation.main.controllers import main
 from .pumpstation.auth.controllers import auth
 
@@ -23,7 +23,7 @@ from .pumpstation.auth.controllers import auth
     [BUG] blueprint template_folder: https://stackoverflow.com/questions/7974771/flask-blueprint-template-folder
 """
 
-app.register_blueprint(pumps)
+app.register_blueprint(tanks)
 app.register_blueprint(main)
 app.register_blueprint(auth)
 

@@ -1,7 +1,7 @@
 from app import db
 from datetime import datetime
 
-class Pump(db.Model):
+class Tank(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     state = db.Column(db.Integer)
     state_update_date = db.Column(db.DateTime, nullable=True, default=datetime.utcnow)
@@ -11,4 +11,4 @@ class Pump(db.Model):
     created_date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Pump {}>'.format(self.fullname)
+        return '<Tank {}>'.format(self.fullname)
